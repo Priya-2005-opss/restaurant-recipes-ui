@@ -7,8 +7,6 @@ function App() {
 
   const [page, setPage] = useState(1);
   const [total, setTotal] = useState(0);
-
-  // ✅ POPUP STATE
   const [selectedRecipe, setSelectedRecipe] = useState(null);
 
   const limit = 8;
@@ -28,8 +26,6 @@ function App() {
 
   }, [page]);
 
-
-  // ✅ Rating badge
   const renderStars = (rating) => {
 
     if (!rating) {
@@ -62,8 +58,6 @@ function App() {
 
   };
 
-
-  // ✅ Nutrients
   const renderNutrients = (nutrients) => {
 
     if (!nutrients || nutrients === "null")
@@ -100,8 +94,6 @@ function App() {
 
   };
 
-
-  // ✅ Search
   const handleSearch = () => {
 
     if (searchTitle.trim() === "") {
@@ -152,8 +144,6 @@ function App() {
   backgroundImage: "url('https://images.unsplash.com/photo-1495195134817-aeb325a55b65')",
   backgroundSize: "cover"
 }}>
-
-
 <h1 style={{
   textAlign: "center",
   color: "green"
@@ -161,8 +151,6 @@ function App() {
   🍽️ Recipe Radar
 </h1>
 
-
-{/* SEARCH */}
 <div style={{ textAlign: "center", marginBottom: "20px" }}>
 
   <input
@@ -190,8 +178,6 @@ function App() {
 
 </div>
 
-
-{/* CARD GRID */}
 <div style={{
   display: "grid",
   gridTemplateColumns: "repeat(auto-fill,minmax(320px,1fr))",
@@ -202,8 +188,6 @@ function App() {
 
 <div
   key={recipe.id}
-
-  // ✅ click opens popup
   onClick={() => setSelectedRecipe(recipe)}
 
   style={{
@@ -241,8 +225,6 @@ function App() {
 
 </div>
 
-
-{/* PAGINATION */}
 <div style={{ textAlign: "center", marginTop: "20px" }}>
 
 <button
@@ -266,9 +248,6 @@ Next
 </button>
 
 </div>
-
-
-{/* ✅ POPUP MODAL */}
 {selectedRecipe && (
 
 <div style={{

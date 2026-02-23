@@ -13,8 +13,6 @@ const pool = new Pool({
   port: 5432,
 });
 
-
-// ✅ GET recipes with pagination
 app.get("/api/recipes", async (req, res) => {
 
   const page = parseInt(req.query.page) || 1;
@@ -48,8 +46,6 @@ app.get("/api/recipes", async (req, res) => {
 
 });
 
-
-// ✅ SEARCH recipes
 app.get("/api/recipes/search", async (req, res) => {
 
   const title = req.query.title;

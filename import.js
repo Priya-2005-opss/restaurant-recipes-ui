@@ -12,8 +12,6 @@ const client = new Client({
 client.connect();
 
 const data = fs.readFileSync("recipes.json", "utf-8");
-
-// 🔥 convert object → array
 const recipesObject = JSON.parse(data);
 const recipes = Object.values(recipesObject);
 
@@ -37,7 +35,7 @@ async function insertData() {
     );
   }
 
-  console.log("✅ Data Imported Successfully");
+  console.log(" Data Imported Successfully");
   client.end();
 }
 
